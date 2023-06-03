@@ -3,17 +3,19 @@ import database
 
 def main():
     print_db_contents('links.db')
-    short_url = input(f'Short URL to check: ')
-    check_get_original(short_url)
-    check_if_in_db(short_url)
+    print('\n======================================\n')
+    print_db_contents('request_log.db')
+    # short_url = input(f'Short URL to check: ')
+    # check_get_original(short_url)
+    # check_if_in_db(short_url)
 
-def print_db_contents(db_path):
+def print_db_contents(db_file_name):
     # Establish a connection to the database
-    conn = sqlite3.connect(db_path)
+    conn = sqlite3.connect(db_file_name)
     cursor = conn.cursor()
 
     # Execute a query
-    cursor.execute("SELECT * FROM links")
+    cursor.execute(f'SELECT * FROM {db_file_name[:-3]}')
 
     # Fetch the results
     results = cursor.fetchall()
