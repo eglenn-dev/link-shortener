@@ -1,10 +1,116 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Link Shortened</title>
+    <style>
+        body {
+            background: #a2a1a1;
+            color: #000000;
+            font-family: Roboto, Helvetica, Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        #message {
+            background: white;
+            max-width: 360px;
+            margin: 100px auto 16px;
+            padding: 32px 24px 16px;
+            border-radius: 3px;
+        }
+
+        #message h3 {
+            color: #888;
+            font-weight: normal;
+            font-size: 16px;
+            margin: 16px 0 12px;
+        }
+
+        #message h2 {
+            color: #159ce4;
+            font-weight: bold;
+            font-size: 16px;
+            margin: 0 0 8px;
+        }
+
+        #message h1 {
+            font-size: 22px;
+            font-weight: 300;
+            color: rgba(0, 0, 0, 0.6);
+            margin: 0 0 16px;
+        }
+
+        #message p {
+            line-height: 140%;
+            margin: 16px 0 24px;
+            font-size: 14px;
+        }
+
+        #message a {
+            display: block;
+            text-align: center;
+            background: #159ce4;
+            text-transform: uppercase;
+            text-decoration: none;
+            color: white;
+            padding: 16px;
+            border-radius: 4px;
+        }
+
+        #message,
+        #message a {
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+        }
+
+        #load {
+            color: rgba(0, 0, 0, 0.4);
+            text-align: center;
+            font-size: 13px;
+        }
+
+        a.button {
+            display: inline-block;
+            padding: 10px 20px;
+            border-radius: 20px;
+            font-size: 18px;
+            text-decoration: none;
+            color: rgb(0, 0, 0);
+            background-color: #ffffff;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        a.button:hover {
+            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+            transform: translateY(-2px);
+        }
+    </style>
+    <script>
+        function getDomain() {
+            var url = window.location.href;
+            var domain = new URL(url).hostname;
+            return domain;
+        }
+
+        function updatePageContent() {
+            var domain = getDomain();
+            var linkElement = document.getElementById("entire-url");
+            if (domain && linkElement) {
+                linkElement.textContent = domain;
+            }
+        }
+        updatePageContent();
+    </script>
+
 </head>
-<body>
+
+<body id="message" onload="updatePageContent()">
     <h1>Link Shortened</h1>
-    <p>Short URL: <a href="{{ short_url }}">{{ short_url }}</a></p>
+    <p>Short URL: <span id="entire-url"></span>/{{ short_url }}<a href="/{{ short_url }}">Go to: {{ original_url }}</a></p>
 </body>
+
 </html>
