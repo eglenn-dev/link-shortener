@@ -1,6 +1,6 @@
 # link-shortening
 
-### 1. Install the flask library
-    py -m pip install flask
+### 1. Install required libraries
+    py -m pip install -r requirements.txt
 ### 2. Run the app file
     py app.py
