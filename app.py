@@ -19,16 +19,17 @@ def shorten():
         if database.is_short_url_unique(short_url): break
         else: short_url = generate_short_url()
     database.save_link(original_url, short_url)
-    return render_template('shortened.html', short_url=short_url)
+    return render_template('shortened.html', short_url=short_url, original_url=original_url)
 
 # Redirect to original URL
 @app.route('/<short_url>')
 def redirect_to_url(short_url):
     original_url = database.get_original_url(short_url)
     if original_url:
-        return redirect(original_url)
+        database.log_url_redirect(short_url)
+        return redirect(original_url, code=302)
     else:
-        return "Invalid URL"
+        return render_template('404.html', short_url=short_url)
 
 def generate_short_url():
     characters = string.ascii_letters + string.digits
