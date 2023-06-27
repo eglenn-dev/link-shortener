@@ -9,6 +9,7 @@ def main():
     # check_get_original(short_url)
     # check_if_in_db(short_url)
 
+
 def print_db_contents(db_file_name):
     # Establish a connection to the database
     conn = sqlite3.connect(db_file_name)
@@ -27,12 +28,17 @@ def print_db_contents(db_file_name):
     # Close the connection
     conn.close()
 
+
 def check_if_in_db(short_url):
-    if (database.is_short_url_unique(short_url)): print('URL is unique')
-    else: print('URL is NOT unique')
+    if (database.is_short_url_unique(short_url)):
+        print('URL is unique')
+    else:
+        print('URL is NOT unique')
+
 
 def check_get_original(short_url):
     print(database.get_original_url(short_url))
+
 
 if __name__ == '__main__':
     main()
