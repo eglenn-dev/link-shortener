@@ -5,7 +5,7 @@ import database
 
 app = Flask(__name__)
 
-# Home page
+# Serves the index page to the root sub page 
 @app.route('/')
 def home():
     return render_template('index.html')
