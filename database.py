@@ -56,7 +56,6 @@ def save_link(original_url, short_url):
     conn.commit()
     conn.close()
 
-
 def get_original_url(short_url):
     ''' Takes in the short_url, queries the database for the 
     original url associated with the short one, and returns 
@@ -76,7 +75,6 @@ def get_original_url(short_url):
         return result[0]
     else:
         return None
-
 
 def is_short_url_unique(short_url):
     ''' Take in the short url and returns boolean True if it is 
@@ -98,7 +96,6 @@ def is_short_url_unique(short_url):
         return False
     else:
         return True
-
 
 def log_url_redirect(short_url):
     ''' Used to log each time a url is used for a redirect in the request_log database.
