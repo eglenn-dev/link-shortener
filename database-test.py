@@ -1,5 +1,5 @@
 import sqlite3
-import database
+import database as database
 
 def main():
     print_db_contents('links.db')
