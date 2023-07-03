@@ -54,5 +54,5 @@ if __name__ == '__main__':
     # Runs the app on default port and on broadcasts on all channels.
     # This is done for deployment versions of the app. 
     app.run(port=5000, host='0.0.0.0')
-    # For testing and debugging use the following:
+    # For testing and debugging use the following and comment out the above line:
     # app.run(debug=True)
