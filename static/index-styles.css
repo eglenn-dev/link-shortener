@@ -3,9 +3,11 @@
 html {
     margin: 0;
     padding: 0;
+    height: 100%;
 }
 
 body {
+    height: 100%;
     background-color: #1a1a1a;
     color: #ffffff;
     font-family: 'Roboto Mono', monospace;
@@ -44,11 +46,8 @@ section a:hover {
     text-underline-offset: 1px;
 }
 
-/* =========== Form Button =========== */
-
 #get-started {
     grid-column: 2/3;
-    grid-row: 2/3;
     justify-self: center;
 }
 
@@ -68,8 +67,7 @@ button {
     user-select: none;
 }
 
-#btn:hover,
-:focus {
+#btn:hover {
     color: #ffffff;
     background: #008cff;
     border: 1px solid #008cff;
@@ -82,7 +80,6 @@ button {
         0 0 100px #008cff;
 }
 
-/* =========== GitHub Button =========== */
 #github-button {
     margin: 30px;
     justify-self: center;
@@ -118,4 +115,20 @@ button {
 .btn:hover svg {
     transform: scale(0.9);
     fill: #333333;
+}
+
+footer {
+    grid-column: 2/3;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    padding: 20px;
+    font-size: 0.8em;
+}
+
+footer a p {
+    color: #ffffff;
+    text-decoration: underline #ffffff 1px;
+    text-underline-offset: 2px;
 }
