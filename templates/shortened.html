@@ -14,7 +14,7 @@
 <body id="message" onload="updatePageContent()">
     <section id="message">
         <h1>Link Shortened</h1>
-        <p>Short URL: <a href=""><span id="entire-url"></span>/{{ short_url }}</a></p>
+        <p>Short URL: <a href="/{{ short_url }}"><span id="entire-url"></span>/{{ short_url }}</a></p>
         <a id="go-to-btn" href="/{{ short_url }}"><button id="btn">{{ original_url }}</button></a>
     </section>
 </body>
