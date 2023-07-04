@@ -1,0 +1,76 @@
+html {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #1a1a1a;
+    color: #ffffff;
+    font-family: 'Roboto Mono', monospace;
+    display: grid;
+    grid-template-columns: 1fr 4fr 1fr;
+}
+
+#message {
+    grid-column: 2/3;
+}
+
+h1 {
+    margin-top: 100px;
+    font-size: 3em;
+    text-align: center;
+}
+
+p {
+    letter-spacing: 0.5px;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 30px;
+}
+
+p a {
+    color: #ffffff;
+    text-decoration: underline #ffffff 1px;
+}
+
+/* =========== Form Button =========== */
+
+#go-to-btn {
+    grid-column: 2/3;
+    grid-row: 2/3;
+    justify-self: center;
+    text-decoration: none;
+}
+
+button {
+    display: flex;
+    justify-self: center;
+    padding: 10px 20px;
+    margin: 10px auto;
+    text-transform: uppercase;
+    border-radius: 8px;
+    font-size: 17px;
+    font-weight: 500;
+    color: #ffffff80;
+    text-shadow: none;
+    background: transparent;
+    box-shadow: transparent;
+    border: 1px solid #ffffff80;
+    transition: 0.5s ease;
+    user-select: none;
+}
+
+#btn:hover,
+:focus {
+    color: #ffffff;
+    background: #008cff;
+    border: 1px solid #008cff;
+    text-shadow: 0 0 5px #ffffff,
+        0 0 10px #ffffff,
+        0 0 20px #ffffff;
+    box-shadow: 0 0 5px #008cff,
+    0 0 20px #008cff,
+    0 0 50px #008cff,
+        0 0 100px #008cff;
+}

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Link Shortener</title>
+  <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='whale.webp') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='shorten-form-styles.css') }}">
+</head>
+
+<body>
+  <section id="message">
+    <h1>Link Shortener</h1>
+    <p>Please enter a valid URL below.</p>
+    <div class="form-container">
+      <form class="form__group field" action="/shorten" method="post">
+        <input name="url" type="input" class="form__field" placeholder="URL" required>
+        <label for="name" class="form__label">URL</label>
+        <input class="submit" type="submit" value="Shorten">
+      </form>
+    </div>
+  </section>
+</body>
+
+</html>
