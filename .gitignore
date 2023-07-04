@@ -9,3 +9,6 @@
 # Ignore .tar image file that are made to upload
 # code to AWS for deployment. 
 *.tar
+
+# Ignore the database testing file from the repo
+database-test.py
