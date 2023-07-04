@@ -42,11 +42,11 @@ def redirect_to_url(short_url):
     http = 'http://'
     # Query the database for the original URL using the shortened URL
     original_url = database.get_original_url(short_url)
-    # Checking if there is a https or http header on the url, if not then add https
-    if (https not in original_url) and (http not in original_url):
-        original_url = https + original_url
     # Checking to make sure that a value was returned from the database
     if original_url:
+        # Checking if there is a https or http header on the url, if not then add https
+        if (https not in original_url) and (http not in original_url):
+            original_url = https + original_url
         # Log the redirect in the redirects database
         database.log_url_redirect(short_url)
         # Redirect the client to the original URL using a 302 (temporary) redirect
@@ -65,6 +65,6 @@ def generate_short_url():
 if __name__ == '__main__':
     # Runs the app on default port and on broadcasts on all channels.
     # This is done for deployment versions of the app. 
-    # app.run(port=5000, host='0.0.0.0')
+    app.run(port=5000, host='0.0.0.0')
     # For testing and debugging use the following line:
-    app.run(debug=True)
+    # app.run(debug=True)
