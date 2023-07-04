@@ -3,13 +3,20 @@ import string
 import random
 import database
 
-app = Flask(__name__)
+app = Flask(__name__, static_url_path='/static', static_folder='static')
 
-# Serves the index page to the root sub page 
+# Serves the welcome page to the user. 
 @app.route('/')
 def home():
-    # returns the index page when the root subdomain is queried from browser
     return render_template('index.html')
+    pass
+
+# Serves the index page to the root sub page 
+@app.route('/shortener')
+def shorten_form():
+    # returns the index page when the root subdomain is queried from browser
+    return render_template('shorten-form.html')
+
 
 # Shorten URL
 @app.route('/shorten', methods=['POST'])
@@ -31,8 +38,13 @@ def shorten():
 # Redirect to original URL
 @app.route('/<short_url>')
 def redirect_to_url(short_url):
+    https = 'https://'
+    http = 'http://'
     # Query the database for the original URL using the shortened URL
     original_url = database.get_original_url(short_url)
+    # Checking if there is a https or http header on the url, if not then add https
+    if (https not in original_url) and (http not in original_url):
+        original_url = https + original_url
     # Checking to make sure that a value was returned from the database
     if original_url:
         # Log the redirect in the redirects database
@@ -53,6 +65,6 @@ def generate_short_url():
 if __name__ == '__main__':
     # Runs the app on default port and on broadcasts on all channels.
     # This is done for deployment versions of the app. 
-    app.run(port=5000, host='0.0.0.0')
-    # For testing and debugging use the following and comment out the above line:
-    # app.run(debug=True)
+    # app.run(port=5000, host='0.0.0.0')
+    # For testing and debugging use the following line:
+    app.run(debug=True)
