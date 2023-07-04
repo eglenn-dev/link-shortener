@@ -5,20 +5,19 @@ import database
 
 app = Flask(__name__, static_url_path='/static', static_folder='static')
 
-# Serves the welcome page to the user. 
+# Serves the welcome index page
 @app.route('/')
 def home():
+    # Returns the rendered index page
     return render_template('index.html')
-    pass
 
-# Serves the index page to the root sub page 
+# Serves the form shortener page
 @app.route('/shortener')
 def shorten_form():
-    # returns the index page when the root subdomain is queried from browser
+    # Returns the shorten form page
     return render_template('shorten-form.html')
 
-
-# Shorten URL
+# Serves the shortened URL page
 @app.route('/shorten', methods=['POST'])
 def shorten():
     # gets the original URL from the user submitted form
