@@ -1,6 +1,7 @@
 html {
     margin: 0;
     padding: 0;
+    height: 100%;
 }
 
 body {
@@ -9,6 +10,7 @@ body {
     font-family: 'Roboto Mono', monospace;
     display: grid;
     grid-template-columns: 1fr 4fr 1fr;
+    height: 100%;
 }
 
 #message {
@@ -71,4 +73,20 @@ button {
     0 0 20px #008cff,
     0 0 50px #008cff,
         0 0 100px #008cff;
+}
+
+footer {
+    grid-column: 2/3;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    padding: 20px;
+    font-size: 0.8em;
+}
+
+footer a p {
+    color: #ffffff;
+    text-decoration: underline #ffffff 1px;
+    text-underline-offset: 2px;
 }

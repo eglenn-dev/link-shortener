@@ -3,6 +3,7 @@
 html {
     margin: 0;
     padding: 0;
+    height: 100%;
 }
 
 body {
@@ -11,6 +12,7 @@ body {
     font-family: 'Roboto Mono', monospace;
     display: grid;
     grid-template-columns: 1fr 4fr 1fr;
+    height: 100%;
 }
 
 #message {
@@ -128,4 +130,20 @@ p {
 .form__field:required,
 .form__field:invalid {
     box-shadow: none;
+}
+
+footer {
+    grid-column: 2/3;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    padding: 20px;
+    font-size: 0.8em;
+}
+
+footer a p {
+    color: #ffffff;
+    text-decoration: underline #ffffff 1px;
+    text-underline-offset: 2px;
 }
