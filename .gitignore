@@ -4,7 +4,7 @@
 
 # Ignore database files that are made once a 
 # project is deplyed and run for the first time. 
-*.db
+# *.db
 
 # Ignore .tar image file that are made to upload
 # code to AWS for deployment. 
