@@ -12,3 +12,4 @@
 
 # Ignore the database testing file from the repo
 database-test.py
+database-test2.py
