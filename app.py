@@ -1,3 +1,5 @@
+# Copyright © 2023 by Ethan Glenn, eglenn.dev
+
 from flask import Flask, render_template, redirect, request
 import string
 import random

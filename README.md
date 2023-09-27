@@ -8,3 +8,6 @@ This project primarily serves as a feasibility demonstration.
     py -m pip install -r requirements.txt
 ### 2. Run the app file
     py app.py
+
+
+Copyright © 2023 by Ethan Glenn, [eglenn.dev](https://eglenn.dev)
