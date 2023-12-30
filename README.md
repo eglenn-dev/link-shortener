@@ -6,9 +6,9 @@ This project primarily serves as a feasibility demonstration, and is not designe
 A production version of the program is available at [link.eglenn.app](https://links.eglenn.app).
 
 ## Project Function Breakdown
-View a breakdown of all functions in the proiject [here](./docs/general.md).
+View a breakdown of all functions in the project [here](./docs/general.md).
 
-## Getting Started:
+## Getting Started
 ### 1. Install required libraries
     pip install -r requirements.txt
 ### 2. Run the app file
