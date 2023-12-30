@@ -3,6 +3,8 @@
 This is a simple link shortening service as part of a project.
 This project primarily serves as a feasibility demonstration, and is not designed for actual use.
 
+A production version of the program is available at [link.eglenn.app](https://links.eglenn.app).
+
 ## Project Function Breakdown
 View a breakdown of all functions in the proiject [here](./docs/general.md).
 
