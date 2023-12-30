@@ -1,13 +1,16 @@
 # Link Shortener
 
 This is a simple link shortening service as part of a project.
-This project primarily serves as a feasibility demonstration.
+This project primarily serves as a feasibility demonstration, and is not designed for actual use.
 
-## Run project locally:
+## Project Function Breakdown
+View a breakdown of all functions in the proiject [here](./docs/general.md).
+
+## Getting Started:
 ### 1. Install required libraries
-    py -m pip install -r requirements.txt
+    pip install -r requirements.txt
 ### 2. Run the app file
-    py app.py
+    app.py
 
 
 Copyright © 2023 by Ethan Glenn, [eglenn.dev](https://eglenn.dev)
