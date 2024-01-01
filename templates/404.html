@@ -18,8 +18,16 @@
     <a id="get-started" href="/"><button id="btn">Home</button></a>
   </section>
   <footer>
-    <a href="https://eglenn.dev" target="_blank"><p>Copyright &copy; Ethan Glenn 2023</p></a>
-</footer>
+    <a href="https://eglenn.dev" target="_blank">
+      <p id="cp-footer">Copyright &copy; Ethan Glenn 2023</p>
+    </a>
+  </footer>
+  <script>
+    const now = new Date();
+    const year = now.getFullYear();
+    footerMessage = document.getElementById('cp-footer');
+    footerMessage.innerHTML = `Copyright &copy; Ethan Glenn ${year}`;
+  </script>
 </body>
 
 </html>
